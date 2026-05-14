@@ -427,11 +427,6 @@ const DYNAMIC_ROUTES = {
         entryScreens: [SCREENS.WORKSPACE.DISTANCE_RATES_SETTINGS, SCREENS.WORKSPACE.PER_DIEM_SETTINGS],
         getRoute: (customUnitID: string) => `default-category-selector/${customUnitID}` as const,
     },
-    UNIT_SELECTOR: {
-        path: 'unit-selector/:customUnitID',
-        entryScreens: [SCREENS.WORKSPACE.DISTANCE_RATES_SETTINGS],
-        getRoute: (customUnitID: string) => `unit-selector/${customUnitID}` as const,
-    },
     WORKSPACE_INVITE: {
         path: 'invite',
         entryScreens: [SCREENS.WORKSPACE.PROFILE, SCREENS.WORKSPACE.MEMBERS],
@@ -2952,6 +2947,10 @@ const ROUTES = {
     WORKSPACE_DISTANCE_RATES_SETTINGS: {
         route: 'workspaces/:policyID/distance-rates/settings',
         getRoute: (policyID: string) => `workspaces/${policyID}/distance-rates/settings` as const,
+    },
+    WORKSPACE_DISTANCE_RATES_UNIT: {
+        route: 'workspaces/:policyID/distance-rates/settings/unit',
+        getRoute: (policyID: string) => `workspaces/${policyID}/distance-rates/settings/unit` as const,
     },
     WORKSPACE_DISTANCE_RATE_DETAILS: {
         route: 'workspaces/:policyID/distance-rates/:rateID',

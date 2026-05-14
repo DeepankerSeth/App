@@ -432,10 +432,6 @@ type SettingsNavigatorParamList = {
         policyID: string;
         customUnitID: string;
     };
-    [SCREENS.WORKSPACE.DYNAMIC_UNIT_SELECTOR]: {
-        policyID: string;
-        customUnitID: string;
-    };
     [SCREENS.WORKSPACE.DYNAMIC_CATEGORIES_IMPORT]: {
         policyID: string;
     };
@@ -694,6 +690,9 @@ type SettingsNavigatorParamList = {
         iouType?: IOUType;
     };
     [SCREENS.WORKSPACE.DISTANCE_RATES_SETTINGS]: {
+        policyID: string;
+    };
+    [SCREENS.WORKSPACE.DISTANCE_RATES_UNIT]: {
         policyID: string;
     };
     [SCREENS.WORKSPACE.ACCOUNTING.QUICKBOOKS_ONLINE_IMPORT]: {

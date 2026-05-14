@@ -1,6 +1,5 @@
 import type {LinkingOptions} from '@react-navigation/native';
 import collectScreensWithTabNavigator from '@libs/Navigation/helpers/collectScreensWithTabNavigator';
-import type {ScreenConfigEntry} from '@libs/Navigation/helpers/collectScreensWithTabNavigator';
 import type {RouteConfig} from '@libs/Navigation/helpers/createNormalizedConfigs';
 import createNormalizedConfigs from '@libs/Navigation/helpers/createNormalizedConfigs';
 import type {RootNavigatorParamList} from '@navigation/types';
@@ -996,7 +995,6 @@ const config: LinkingOptions<RootNavigatorParamList>['config'] = {
                         [SCREENS.WORKSPACE.DYNAMIC_CATEGORIES_IMPORTED]: DYNAMIC_ROUTES.WORKSPACE_CATEGORIES_IMPORTED.path,
                         [SCREENS.WORKSPACE.DYNAMIC_SPEND_CATEGORY_SELECTOR]: DYNAMIC_ROUTES.SPEND_CATEGORY_SELECTOR.path,
                         [SCREENS.WORKSPACE.DYNAMIC_DEFAULT_CATEGORY_SELECTOR]: DYNAMIC_ROUTES.DEFAULT_CATEGORY_SELECTOR.path,
-                        [SCREENS.WORKSPACE.DYNAMIC_UNIT_SELECTOR]: DYNAMIC_ROUTES.UNIT_SELECTOR.path,
                         [SCREENS.WORKSPACE.WORKFLOWS_PAYER]: {
                             path: ROUTES.WORKSPACE_WORKFLOWS_PAYER.route,
                         },
@@ -1038,6 +1036,9 @@ const config: LinkingOptions<RootNavigatorParamList>['config'] = {
                         },
                         [SCREENS.WORKSPACE.DISTANCE_RATES_SETTINGS]: {
                             path: ROUTES.WORKSPACE_DISTANCE_RATES_SETTINGS.route,
+                        },
+                        [SCREENS.WORKSPACE.DISTANCE_RATES_UNIT]: {
+                            path: ROUTES.WORKSPACE_DISTANCE_RATES_UNIT.route,
                         },
                         [SCREENS.WORKSPACE.DISTANCE_RATE_DETAILS]: {
                             path: ROUTES.WORKSPACE_DISTANCE_RATE_DETAILS.route,
@@ -2384,6 +2385,6 @@ const normalizedConfigs = Object.keys(config.screens)
         {} as Record<Screen, RouteConfig>,
     );
 
-const screensWithOnyxTabNavigator = collectScreensWithTabNavigator(config.screens as Record<string, ScreenConfigEntry>);
+const screensWithOnyxTabNavigator = collectScreensWithTabNavigator(config.screens);
 
 export {normalizedConfigs, config, screensWithOnyxTabNavigator};
