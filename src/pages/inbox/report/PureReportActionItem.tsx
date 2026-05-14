@@ -487,7 +487,7 @@ function PureReportActionItem({
                     callbacks: {
                         onShow: toggleContextMenuFromActiveReportAction,
                         onHide: toggleContextMenuFromActiveReportAction,
-                        setIsEmojiPickerActive: setIsEmojiPickerActive as () => void,
+                        setIsEmojiPickerActive,
                     },
                     disabledOptions: disabledActions,
                 });
@@ -824,7 +824,12 @@ function PureReportActionItem({
                 </ReportActionItemBasicMessage>
             );
         } else if (isActionOfType(action, CONST.REPORT.ACTIONS.TYPE.CREATED) && isHarvestCreatedExpenseReport) {
-            children = <CreateHarvestReportAction reportNameValuePairsOriginalID={reportNameValuePairsOriginalID} />;
+            children = (
+                <CreateHarvestReportAction
+                    action={action}
+                    reportNameValuePairsOriginalID={reportNameValuePairsOriginalID}
+                />
+            );
         } else if (isActionOfType(action, CONST.REPORT.ACTIONS.TYPE.CREATED_REPORT_FOR_UNAPPROVED_TRANSACTIONS)) {
             children = <CreatedReportForUnapprovedTransactionsAction action={action} />;
         } else if (
